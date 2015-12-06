@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="EGCourse" representedClassName="EGCourse" syncable="YES">
+        <attribute name="branch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EGStudent" inverseName="courses" inverseEntity="EGStudent" syncable="YES"/>
+        <relationship name="teacher" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EGTeacher" inverseName="courses" inverseEntity="EGTeacher" syncable="YES"/>
+    </entity>
+    <entity name="EGStudent" representedClassName="EGStudent" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EGCourse" inverseName="students" inverseEntity="EGCourse" syncable="YES"/>
+    </entity>
+    <entity name="EGTeacher" representedClassName="EGTeacher" syncable="YES">
+        <attribute name="branch" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EGCourse" inverseName="teacher" inverseEntity="EGCourse" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="EGCourse" positionX="-5897" positionY="2516" width="128" height="118"/>
+        <element name="EGStudent" positionX="-6138" positionY="2525" width="128" height="103"/>
+        <element name="EGTeacher" positionX="-5888" positionY="2736" width="128" height="103"/>
+    </elements>
+</model>
